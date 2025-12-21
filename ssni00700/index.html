@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+const url = "https://javhub.jp/ssni00700/";
+const isAndroid = /Android/i.test(navigator.userAgent);
+
+if (isAndroid) {
+  // Android は Chrome 強制指定
+  const chromeIntent = `intent:${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
+  window.location.replace(chromeIntent);
+
+} else {
+  // iOS / Safari
+  window.location.replace("x-safari-" + url);
+}
+</script>
+</head>
+<body>
+</body>
+</html>
